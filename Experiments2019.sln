@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weather", "Weather\Weather.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveTime", "LiveTime\LiveTime.csproj", "{60CAAAD2-CBC4-4626-A02C-B36E019B5F90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pivot1", "Pivot1\Pivot1.csproj", "{DCC9A1F2-58CF-498D-8CD3-AE09E0D953E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractEnergy", "ExtractEnergy\ExtractEnergy.csproj", "{C3B13923-E0B6-4EFD-8265-F83E91ED3724}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{60CAAAD2-CBC4-4626-A02C-B36E019B5F90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60CAAAD2-CBC4-4626-A02C-B36E019B5F90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60CAAAD2-CBC4-4626-A02C-B36E019B5F90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC9A1F2-58CF-498D-8CD3-AE09E0D953E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC9A1F2-58CF-498D-8CD3-AE09E0D953E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC9A1F2-58CF-498D-8CD3-AE09E0D953E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC9A1F2-58CF-498D-8CD3-AE09E0D953E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3B13923-E0B6-4EFD-8265-F83E91ED3724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3B13923-E0B6-4EFD-8265-F83E91ED3724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3B13923-E0B6-4EFD-8265-F83E91ED3724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3B13923-E0B6-4EFD-8265-F83E91ED3724}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
