@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractEnergy", "ExtractEne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartModelView", "StartModelView\StartModelView.csproj", "{5DDFE78F-0999-4EAE-B195-02A1EC27846B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "To-Done", "To-Done\To-Done.csproj", "{A66D5B17-B2BB-4FE8-BF99-A40AF963022B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyWPFTemplate", "EmptyWPFTemplate\EmptyWPFTemplate.csproj", "{56581EB3-B3C1-4167-820E-90B1629D459B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{5DDFE78F-0999-4EAE-B195-02A1EC27846B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DDFE78F-0999-4EAE-B195-02A1EC27846B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DDFE78F-0999-4EAE-B195-02A1EC27846B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A66D5B17-B2BB-4FE8-BF99-A40AF963022B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A66D5B17-B2BB-4FE8-BF99-A40AF963022B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A66D5B17-B2BB-4FE8-BF99-A40AF963022B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A66D5B17-B2BB-4FE8-BF99-A40AF963022B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56581EB3-B3C1-4167-820E-90B1629D459B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56581EB3-B3C1-4167-820E-90B1629D459B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56581EB3-B3C1-4167-820E-90B1629D459B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56581EB3-B3C1-4167-820E-90B1629D459B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
