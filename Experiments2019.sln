@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "To-Done", "To-Done\To-Done.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmptyWPFTemplate", "EmptyWPFTemplate\EmptyWPFTemplate.csproj", "{56581EB3-B3C1-4167-820E-90B1629D459B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pivot2", "Pivot2\Pivot2.csproj", "{BF6C488F-740C-4EEF-BE3D-D95A1926E4E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{56581EB3-B3C1-4167-820E-90B1629D459B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56581EB3-B3C1-4167-820E-90B1629D459B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56581EB3-B3C1-4167-820E-90B1629D459B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF6C488F-740C-4EEF-BE3D-D95A1926E4E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6C488F-740C-4EEF-BE3D-D95A1926E4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6C488F-740C-4EEF-BE3D-D95A1926E4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6C488F-740C-4EEF-BE3D-D95A1926E4E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
