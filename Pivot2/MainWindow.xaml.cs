@@ -32,13 +32,12 @@ namespace Pivot2
 		{
 			InitializeComponent();
 
-			//DataContext = this;
-			//PivotDataGrid.DataContext = Table;
-
 			LoadAccounts();
-			BuildTable();
+			CollectTallies();
+			CreatePivotTable();
 			FillDataGrid();
 
+			PivotDataGrid.ItemsSource = null;
 			PivotView = new DataView(Data.Tables["Pivot"]);
 			PivotDataGrid.ItemsSource = PivotView;
 
@@ -53,18 +52,53 @@ namespace Pivot2
 			}
 		}
 
-		private void BuildTable()
+		private void CollectTallies()
 		{
+			bool isPositiveAmounts = false;
+			string originName = "Onverwacht";
 			Tallies = Accounts
-				.Where(x => (x.Amount < 0 && x.Origin == "Gezamenlijk"))
+				.Where(x => originName == "Alles" ? (x.Amount != 0) : 
+					(isPositiveAmounts ? (x.Amount > 0) : 
+						(x.Amount < 0 && (originName == "Onverwacht" ? x.Origin is null : x.Origin == originName))))
 				.Select(x => x.TallyName)
 				.OrderBy(x => x)
 				.Distinct()
 				.ToList();
+		}
+
+		private List<(string Month, string Tally, decimal SumAmount)> GetPivot(bool isPositiveAmounts, string originName)
+		{
+
+			List<(string Month, string Tally, decimal SumAmount)> result = Accounts
+				.Where(x => originName == "Alles" ? (x.Amount != 0) :
+					(isPositiveAmounts ? (x.Amount > 0) :
+						(x.Amount < 0 && (originName == "Onverwacht" ? x.Origin is null : x.Origin == originName))))
+				.OrderByDescending(x => (x.Date, x.TallyName))
+				.GroupBy(x => (x.Month, x.TallyName),
+				(key, pivot) =>
+				{
+					return (Month: key.Month,
+					TallyName: key.TallyName,
+					SumAmount: pivot.Sum(x => x.Amount)
+					);
+				}).ToList();
+
+			return result;
+
+		}
+
+
+		/// <summary>
+		/// Create a pivot table from scratch.
+		/// </summary>
+		private void CreatePivotTable()
+		{
+
+			if (Data.Tables.Count > 0) { Data.Tables.Clear(); };
 
 			DataTable pivot = new DataTable("Pivot");
 			DataColumn column = pivot.Columns.Add("Month", typeof(string));
-			column.AllowDBNull = false;
+			pivot.Columns[0].AllowDBNull = false;
 
 			int count = 0;
 			foreach (string col in Tallies)
@@ -74,33 +108,39 @@ namespace Pivot2
 				pivot.Columns[count].AllowDBNull = true;
 			};
 
-			foreach (var month in Accounts
-				.Where(x => (x.Amount < 0 && x.Origin == "Gezamenlijk"))
-				.OrderByDescending(x => x.Month)
-				.Select(x => x.Month)
-				.Distinct()
-				.ToList()
-				)
-			{
-				DataRow row;
-				row = pivot.NewRow();
-				row["Month"] = month;
-
-				count = 0;
-				foreach (string col in Tallies)
-				{
-					row[col] = count;
-					count++;
-				}
-				pivot.Rows.Add(row);
-			}
-
 			Data.Tables.Add(pivot);
 
 		}
 
 		private void FillDataGrid()
 		{
+
+			string originName = "Onverwacht";
+			List<(string Month, string Tally, decimal SumAmount)> Pivot = new List<(string Month, string Tally, decimal SumAmount)>();
+			Pivot = GetPivot(false, originName);
+
+			DataRow row = null;
+			string month = string.Empty;
+			for (int i = 0; i < Pivot.Count - 1; i++)
+			{
+				if (month != Pivot[i].Month)
+				{
+					if (!string.IsNullOrEmpty(month) || row != null)
+					{
+						Data.Tables[0].Rows.Add(row);
+					}
+					row = Data.Tables[0].NewRow();
+					month = Pivot[i].Month;
+					row["Month"] = month;
+				}
+
+				row[Pivot[i].Tally] = Pivot[i].SumAmount;
+			}
+
+			Data.Tables[0].Rows.Add(row);
+
 		}
+
+
 	}
 }
