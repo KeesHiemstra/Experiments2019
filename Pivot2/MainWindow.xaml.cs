@@ -141,6 +141,9 @@ namespace Pivot2
 
 		}
 
+		private void PivotDataGrid_Loaded(object sender, RoutedEventArgs e)
+		{
 
+		}
 	}
 }

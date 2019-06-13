@@ -6,13 +6,20 @@
         xmlns:local="clr-namespace:Pivot2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-  <Grid>
-    <DataGrid Name="PivotDataGrid"
+    <Grid>
+        <DataGrid Name="PivotDataGrid"
               AutoGenerateColumns="True"
               CanUserAddRows="False"
-              CanUserDeleteRows="False"
-              ItemsSource="{Binding Path=Elements[Pivot]}">
-
-    </DataGrid>
-  </Grid>
+              CanUserDeleteRows="False" Loaded="PivotDataGrid_Loaded" AlternatingRowBackground="#FFCDCDCD">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="LayoutTransform">
+                        <Setter.Value>
+                            <RotateTransform Angle="-90" />
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+        </DataGrid>
+    </Grid>
 </Window>
