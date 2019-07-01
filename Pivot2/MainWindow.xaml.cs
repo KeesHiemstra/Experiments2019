@@ -40,7 +40,6 @@ namespace Pivot2
 			PivotDataGrid.ItemsSource = null;
 			PivotView = new DataView(Data.Tables["Pivot"]);
 			PivotDataGrid.ItemsSource = PivotView;
-
 		}
 
 		private void LoadAccounts()
@@ -55,10 +54,10 @@ namespace Pivot2
 		private void CollectTallies()
 		{
 			bool isPositiveAmounts = false;
-			string originName = "Onverwacht";
+			string originName = "Alles";
 			Tallies = Accounts
-				.Where(x => originName == "Alles" ? (x.Amount != 0) : 
-					(isPositiveAmounts ? (x.Amount > 0) : 
+				.Where(x => originName == "Alles" ? (x.Amount != 0) :
+					(isPositiveAmounts ? (x.Amount > 0) :
 						(x.Amount < 0 && (originName == "Onverwacht" ? x.Origin is null : x.Origin == originName))))
 				.Select(x => x.TallyName)
 				.OrderBy(x => x)
@@ -115,7 +114,7 @@ namespace Pivot2
 		private void FillDataGrid()
 		{
 
-			string originName = "Onverwacht";
+			string originName = "Alles";
 			List<(string Month, string Tally, decimal SumAmount)> Pivot = new List<(string Month, string Tally, decimal SumAmount)>();
 			Pivot = GetPivot(false, originName);
 
@@ -143,6 +142,12 @@ namespace Pivot2
 
 		private void PivotDataGrid_Loaded(object sender, RoutedEventArgs e)
 		{
+			for (int i = 1; i < PivotDataGrid.Columns.Count; i++)
+			{
+//				PivotDataGrid.Columns[i].MinWidth = 70;
+				//                PivotDataGrid.Columns[i].Width = 10;
+				//              PivotDataGrid.Columns[i].Header = 70;
+			}
 
 		}
 	}
