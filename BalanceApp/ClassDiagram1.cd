@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BalanceApp.Views.BalanceWindow" Collapsed="true">
+    <Position X="0.75" Y="0.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAIAAAAAAAAAAQCAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Views\BalanceWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BalanceMV" />
+      <Property Name="MainMV" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BalanceApp.ModelViews.BalanceModelView" Collapsed="true">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAEAAIAAAAAEAQAAAAAAAHAAAAABAgECAIChAAA=</HashCode>
+      <FileName>ModelViews\BalanceModelView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="CurrentAmount" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BalanceApp.ModelViews.MainModelView" Collapsed="true">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEABAAAAIAAAAAAAEAEwAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>ModelViews\MainModelView.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BalanceApp.Model.BalanceAmount" Collapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAACAwAAAgAABAAAAAQAAAAA=</HashCode>
+      <FileName>Model\Balance.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

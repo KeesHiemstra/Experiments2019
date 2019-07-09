@@ -14,7 +14,7 @@
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
-			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 
 		<ComboBox Name="BalanceNameComboBox"
@@ -22,14 +22,14 @@
 		          DisplayMemberPath="Name"
 		          IsEditable="False"
 		          ItemsSource="{Binding Balances}"
-		          SelectionChanged="BalanceNameComboBox_SelectionChanged"/>
+		          SelectionChanged="BalanceNameComboBox_SelectionChanged" />
 
 		<DataGrid Name="BalanceAmountDataGrid"
 		          Grid.Row="1"
 		          AutoGenerateColumns="False"
 		          IsReadOnly="True"
 		          ItemsSource="{Binding BalanceAmount}"
-							MouseDoubleClick="BalanceAmountDataGrid_MouseDoubleClick">
+		          MouseDoubleClick="BalanceAmountDataGrid_MouseDoubleClick">
 			<DataGrid.Columns>
 				<DataGridTextColumn Binding="{Binding Date, StringFormat=yyyy-MM-dd}" Header="Date" />
 				<DataGridTextColumn MinWidth="70"
@@ -55,18 +55,17 @@
 			</DataGrid.Columns>
 		</DataGrid>
 
-		<StackPanel Orientation="Horizontal"
-								Grid.Row="2">
-			<Button Name="NewAccountButton" 
-							Content="New _Account" 
-							Click="NewAccountButton_Click"
-							Padding="5,0,5,0"
-							Margin="0,5,5,0"/>
-			<Button Name="NewBalanceButton" 
-							Content="New _Balance" 
-							Click="NewBalanceButton_Click"
-							Padding="5,0,5,0"
-							Margin="0,5,5,0"/>
+		<StackPanel Grid.Row="2" Orientation="Horizontal">
+			<Button Name="NewAccountButton"
+			        Margin="0,5,5,0"
+			        Padding="5,0,5,0"
+			        Click="NewAccountButton_Click"
+			        Content="New _Account" />
+			<Button Name="NewBalanceButton"
+			        Margin="0,5,5,0"
+			        Padding="5,0,5,0"
+			        Click="NewBalanceButton_Click"
+			        Content="New _Balance" />
 		</StackPanel>
 	</Grid>
 </Window>
