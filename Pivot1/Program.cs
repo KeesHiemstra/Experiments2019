@@ -39,7 +39,7 @@ namespace Pivot1
       {
         foreach (var item in rec.GetType().GetProperties())
         {
-          Console.Write($"{item.GetValue(rec).ToString()}\t");
+          Console.Write($"{item.GetValue(rec)}\t");
         }
         Console.WriteLine();
       }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,7 +29,7 @@ namespace To_Done
 			MainVM = mainVM;
 
 			InitializeComponent();
-			Title = $"To-Done ({System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()})";
+			Title = $"To-Done ({Assembly.GetExecutingAssembly().GetName().Version})";
 
 			DataContext = MainVM;
 		}
